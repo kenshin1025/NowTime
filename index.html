@@ -18,14 +18,41 @@
 </head>
 <body>
 
+<!--ヘッダー-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#!">時計</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#!">現在時刻 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#!">アラーム <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#!">ストップウォッチ <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#!">タイマー <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!--時計-->
 <div id="app">
     <div class="container">
         <div class="time">
-            <p class="">{{ hours }}:{{minutes}}:{{seconds}}</p>
+            <p :style="{ color: nowColor }">{{ hours }}:{{minutes}}:{{seconds}}</p>
         </div>
     </div>
 </div>
 
+<!--JavaScript-->
 <script>
     const zeroPadding = (num, digit) => {
         return (Array(digit).join("0") + num).slice(-digit)
@@ -71,6 +98,8 @@
 </script>
 
 </body>
+
+<!--css-->
 <style scoped>
 
     .time {
@@ -86,7 +115,7 @@
     }
 
     body{
-        background: darkorange;
+        
     }
 
     /*.date {*/
